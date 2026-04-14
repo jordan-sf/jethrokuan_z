@@ -1,5 +1,5 @@
 function __z_complete -d "add completions"
-    if test $Z_USE_TILDE_PREFIX = true
+    if test $Z_TILDE_STARTS_COMPLETIONS = true
         complete -c $Z_CMD -a "(__z -l | string replace -r '^\\S*\\s*' '' | string replace $HOME '~')" -f -k
         complete -c $ZO_CMD -a "(__z -l | string replace -r '^\\S*\\s*' '' | string replace $HOME '~')" -f -k
     else
