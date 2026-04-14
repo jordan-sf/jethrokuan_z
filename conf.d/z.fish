@@ -39,8 +39,8 @@ else if contains $HOME $Z_EXCLUDE
     set Z_EXCLUDE (string replace -r -- "^$HOME\$" '^'$HOME'$$' $Z_EXCLUDE)
 end
 
-if test -z "$Z_USE_TILDE_PREFIX"
-    set -U Z_USE_TILDE_PREFIX false
+if test -z "$Z_TILDE_STARTS_COMPLETIONS"
+    set -U Z_TILDE_STARTS_COMPLETIONS false
 end
 
 # Setup completions once first
@@ -64,5 +64,5 @@ function __z_uninstall --on-event z_uninstall
     set -e ZO_CMD
     set -e Z_DATA
     set -e Z_EXCLUDE
-    set -e Z_USE_TILDE_PREFIX
+    set -e Z_TILDE_STARTS_COMPLETIONS
 end
